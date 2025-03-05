@@ -15,9 +15,11 @@ const Navcontainer = styled.div`
     .logos{
         display:flex;
         align-items:center;
+        gap:10px;
         padding:0px;
 
         img{
+            cursor:pointer;
             height:80px;
         }
         img:nth-child(2){
@@ -32,10 +34,14 @@ const Navcontainer = styled.div`
         a{
             color: #000;
             text-decoration:none;
-            transition:color 200ms ease-in``;
+            transition:color 200ms ease-in;
 
             &:hover{
                 color: #71a8fc;
+            }
+
+            &:active{
+                color: red;
             }
         }
     }
@@ -45,7 +51,9 @@ function Navbar() {
     return (
         <Navcontainer>
             <div className="logos">
-                <img src={acm_2} />
+                <a href="https://www.acm.org/" target='_blank'>
+                    <img src={acm_2} />
+                </a>
                 <img src={acm_1} />
             </div>
 
