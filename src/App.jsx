@@ -1,19 +1,17 @@
-import { Route,Router,Routes } from "react-router"
+import { Route, Routes } from "react-router-dom"
 import Homepage from "./page/Homepage"
 import Teams from "./page/Teams"
+import Navbar from "./components/Navbar"
 
 function App() {
-  
+
 
   return (
     <>
-
-    <Routes>
-      <Route index element={<Homepage/>}/>
-      <Route exact path="/Homepage" element={<Homepage/>}/>
-      
-      <Route path="/Teams" element={<Teams/>}/>
-    </Routes>
+      <Routes>
+        <Route index element={<Homepage />} />
+        
+      </Routes>
     </>
   )
 }

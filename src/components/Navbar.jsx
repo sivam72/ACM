@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import acm_1 from "../assets/acm_logo_1.png"
 import acm_2 from "../assets/chapter_logo.png"
-import { Link } from 'react-router'
+import { Link } from 'react-router-dom'
 
 const Navcontainer = styled.div`
     display:flex;
@@ -29,15 +29,16 @@ const Navcontainer = styled.div`
 
     .nav_list{
         display: flex;
-        gap:10px;
+        gap:30px;
 
         a{
+            font-size: 1.2rem;
             color: #000;
             text-decoration:none;
             transition:color 200ms ease-in;
 
             &:hover{
-                color: #71a8fc;
+                color: #319ddb;
             }
 
             &:active{
@@ -58,8 +59,8 @@ function Navbar() {
             </div>
 
             <nav className="nav_list">
-                <Link to={'Homepage'}>Home</Link>
-                <Link to={'Events'}>Events</Link>
+                <Link to={'Homepage'} replace={true}>Home</Link>
+                <Link to={'Events'} repla>Events</Link>
                 <Link to={'Gallery'}>Gallery</Link>
                 <Link to={'Teams'}>Team</Link>
                 <Link to={'Contact'}>Contact</Link>
