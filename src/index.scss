@@ -1,3 +1,6 @@
+@use "sass:color";
+@use "sass:map";
+
 *,
 *::before,
 *::after {
@@ -9,7 +12,7 @@
 }
 
 body {
-    font-family: "Roboto";
+    font-family: "Poppins";
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
 }
@@ -53,7 +56,108 @@ h6 {
     text-wrap: balance;
 }
 
+$positions: (
+  74: (x: 73.42532467532472%, y: 80.1953125%),
+  75: (x: 89.98376623376619%, y: 17.8515625%),
+  76: (x: 20%, y: 80%),
+  77: (x: 23.250304383116863%, y: 23.945312500000004%)
+);
+
+
+@each $index, $coords in $positions {
+  @property --#{$index}-x-position {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: #{map.get($coords, x)};
+  }
+  
+  @property --#{$index}-y-position {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: #{map.get($coords, y)};
+  }
+}
+
+:root {
+  @each $index, $coords in $positions {
+    --#{$index}-x-position: #{map.get($coords, x)};
+    --#{$index}-y-position: #{map.get($coords, y)};
+  }
+}
+
+.background-element {
+  background: 
+    radial-gradient(100% 100% at var(--74-x-position) var(--74-y-position), #c09eff -84%, transparent),
+    radial-gradient(100% 100% at var(--75-x-position) var(--75-y-position), #ffffff 0%, transparent),
+    radial-gradient(100% 100% at var(--76-x-position) var(--76-y-position), #85caff -75%, transparent),
+    radial-gradient(100% 100% at var(--77-x-position) var(--77-y-position), #ffffff 0%, transparent),
+    #ffffff;
+  animation-name: main;
+  animation-iteration-count: infinite;
+  animation-duration: 10s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes main {
+  0% {
+    --74-x-position: 100%;
+    --74-y-position: 100%;
+  }
+  25% {
+    --74-x-position: 90%;
+    --74-y-position: 90%;
+    --75-x-position: 85%;
+    --75-y-position: 80%;
+    --76-x-position: 95%;
+    --76-y-position: 95%;
+  }
+  50% {
+    --74-x-position: 80%;
+    --74-y-position: 80%;
+    --75-x-position: 15%;
+    --75-y-position: 85%;
+    --76-x-position: 90%;
+    --76-y-position: 90%;
+    --77-x-position: 30%;
+    --77-y-position: 30%;
+  }
+  75% {
+    --74-x-position: 50%;
+    --74-y-position: 50%;
+    --75-x-position: 40%;
+    --75-y-position: 45%;
+    --76-x-position: 60%;
+    --76-y-position: 60%;
+    --77-x-position: 40%;
+    --77-y-position: 40%;
+  }
+  100% {
+    --74-x-position: 100%;
+    --74-y-position: 100%;
+  }
+}
+
 #root,
 #__next {
     isolation: isolate;
+    --font-1: "Roboto";
+    --font-2: "Poppins";
+    --font-3: "Agdasima";
+    --clr_1: #ffe600;
+}
+
+$clr-1:#ffe600;
+
+.bton{
+    cursor: pointer;
+    border: 1px solid transparent;
+    background-color: var(--clr_1);
+    padding: .5rem 1rem;
+    border-radius: 3px;
+    transition: background-color 200ms;
+
+    &:active{
+        background-color: color.scale(#f0a80c,$lightness: 10%);
+    }
+    
 }

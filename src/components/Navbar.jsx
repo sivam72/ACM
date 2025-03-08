@@ -5,12 +5,15 @@ import acm_2 from "../assets/chapter_logo.png"
 import { Link } from 'react-router-dom'
 
 const Navcontainer = styled.div`
+    position: absolute;
+    left: 0;
+    right: 0;
     display:flex;
     align-items:center;
     justify-content: space-between;
     padding: 0px 1rem;
-    background-color:#ffffff;
-    border-bottom:1px solid #e0e0e0e0;
+    background-color: transparent;
+    border-bottom:1px solid transparent;
 
     .logos{
         display:flex;
@@ -32,7 +35,7 @@ const Navcontainer = styled.div`
         gap:30px;
 
         a{
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: #000;
             text-decoration:none;
             transition:color 200ms ease-in;
