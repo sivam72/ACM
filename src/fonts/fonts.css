@@ -1,0 +1,38 @@
+@font-face {
+  font-family: "Coolvetica Compressed Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Coolvetica Compressed Regular"),
+    url("fonts_files/coolvetica_compressed_rg.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Coolvetica Condensed Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Coolvetica Condensed Regular"),
+    url("fonts_files/coolvetica_condensed_rg.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Coolvetica Crammed Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Coolvetica Crammed Regular"),
+    url("fonts_files/coolvetica_crammed_rg.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Coolvetica Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Coolvetica Regular"), url("fonts_files/coolvetica_rg.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Coolvetica Regular Italic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Coolvetica Regular Italic"),
+    url("fonts_files/coolvetica_rg_it.woff") format("woff");
+}

@@ -41,11 +41,11 @@ const Navcontainer = styled.div`
             transition:color 200ms ease-in;
 
             &:hover{
-                color: #319ddb;
+                color: var(--clr_1);
             }
 
             &:active{
-                color: red;
+                color: #ff9900;
             }
         }
     }
