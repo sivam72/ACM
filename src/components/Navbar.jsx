@@ -4,8 +4,12 @@ import acm_1 from "../assets/acm_logo_1.png"
 import acm_2 from "../assets/chapter_logo.png"
 import { Link } from 'react-router-dom'
 
+
+
+
+
 const Navcontainer = styled.div`
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -13,7 +17,6 @@ const Navcontainer = styled.div`
     align-items:center;
     justify-content: space-between;
     padding: 0px 1rem;
-    background-color: transparent;
     border-bottom:1px solid transparent;
 
     .logos{
@@ -39,14 +42,14 @@ const Navcontainer = styled.div`
             font-size: 1.1rem;
             color: #000;
             text-decoration:none;
-            transition:color 200ms ease-in;
+            font-weight: 500;
             padding: .5rem;
             border:1px solid transparent;
             transition:color 300ms ease,border 300ms ease-out;
 
             &:hover{
                 color: var(--clr_1); 
-                border-bottom: 1px solid #bbbbbb;
+                /* border-bottom: 1px solid #bbbbbb; */
             }
 
             &:active{
@@ -56,9 +59,10 @@ const Navcontainer = styled.div`
     }
 `
 
-function Navbar() {
+function Navbar(props) {
+    const { navState } = props;
     return (
-        <Navcontainer>
+        <Navcontainer className={navState ? "nav" : "scrolled"} >
             <div className="logos">
                 <a href="https://www.acm.org/" target='_blank'>
                     <img src={acm_2} />
@@ -67,11 +71,11 @@ function Navbar() {
             </div>
 
             <nav className="nav_list">
-                <Link to={'Homepage'} replace={true}>Home</Link>
-                <Link to={'Events'} repla>Events</Link>
+                <Link to={'Homepage'}>Home</Link>
+                <Link to={'Events'} >Events</Link>
                 <Link to={'Gallery'}>Gallery</Link>
                 <Link to={'Teams'}>Team</Link>
-                <Link to={'Contact'}>Contact</Link>
+                <Link>Contact</Link>
             </nav>
         </Navcontainer>
     )

@@ -1,5 +1,4 @@
 @use "sass:color";
-@use "./fonts/fonts.scss";
 
 *,
 *::before,
@@ -12,7 +11,7 @@
 }
 
 body {
-    font-family: "Poppins";
+    font-family: "poppins";
     line-height: 1.5;
     background-color: #f8f8f8;
     -webkit-font-smoothing: antialiased;
@@ -85,4 +84,16 @@ $clr-1:#ffe600;
         background-color: color.scale(#f0a80c,$lightness: 10%);
     }
     
+}
+
+
+.nav{
+    background-color: transparent;
+    color: #000;
+    transition: color 200ms,background-color 300ms ease-out;
+}
+
+.scrolled {
+    background-color: #fff;
+    color: #000;
 }

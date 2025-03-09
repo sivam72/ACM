@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Navbar from "../components/Navbar";
 import styled from "styled-components";
 import Featues from "../components/Featues";
 import Footer from "../components/Footer";
+
 
 const Homepagemain = styled.main`
   position: relative;
@@ -79,7 +80,7 @@ const Maincontent = styled.section`
       justify-content: space-between;
 
       .heading {
-        font-family: "Coolvetica";
+        font-family: "Monda";
         font-size: 3.5rem;
       }
 
@@ -100,11 +101,27 @@ const Maincontent = styled.section`
 `;
 
 function Homepage() {
+
+  const [navState, setnavState] = useState(true);
+  const Sectionref = useRef();
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+          setnavState(false)
+        } else {
+          setnavState(true)
+        }
+      })
+    }, { rootMargin: "-200px 0px 0px 0px" })
+    observer.observe(Sectionref.current)
+  }, [])
   return (
     <>
       <Homepagemain>
-        <Navbar />
-        <Hero className="background-element">
+        <Navbar navState={navState} />
+        <Hero className="background-element" ref={Sectionref}>
           <div className="homepage_content">
             <h1>
               Velammal Institute of Technology <br />
