@@ -1,0 +1,86 @@
+@font-face {
+  font-family: "Coolvetica Condensed Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Coolvetica Condensed Regular"),
+    url("fonts_files/coolvetica_condensed_rg.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Coolvetica";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Coolvetica Regular"),
+    url("fonts_files/coolvetica_rg.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Coolvetica Regular Italic";
+  font-style: italic;
+  font-weight: normal;
+  src: local("Coolvetica Regular Italic"),
+    url("fonts_files/coolvetica_rg_it.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("./fonts_files/Roboto-Regular-webfont.woff2") format("woff2"),
+    url("./fonts_files/Roboto-Regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto Condensed";
+  src: url("./fonts_files/RobotoCondensed-Regular-webfont.woff2") format("woff2"),
+    url("./fonts_files/RobotoCondensed-Regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Agdasima";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Agdasima Regular"),
+    url("./fonts_files/Agdasima-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Agdasima Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Agdasima Bold"),
+    url("./fonts_files/Agdasima-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Poppins Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Poppins Bold"),
+    url("./fonts_files/Poppins-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Poppins Regular"),
+    url("./fonts_files/Poppins-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Monda";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Monda Regular"),
+    url("./fonts_files/Monda-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Monda Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Monda Bold"), url("./fonts_files/Monda-Bold.woff") format("woff");
+}

@@ -32,16 +32,20 @@ const Navcontainer = styled.div`
 
     .nav_list{
         display: flex;
-        gap:30px;
+        gap:10px;
 
         a{
             font-size: 1.1rem;
             color: #000;
             text-decoration:none;
             transition:color 200ms ease-in;
+            padding: .5rem;
+            border:1px solid transparent;
+            transition:color 300ms ease,border 300ms ease-out;
 
             &:hover{
-                color: var(--clr_1);
+                color: var(--clr_1); 
+                border-bottom: 1px solid #bbbbbb;
             }
 
             &:active{

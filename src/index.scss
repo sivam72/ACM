@@ -1,4 +1,5 @@
 @use "sass:color";
+@use "./fonts/fonts.scss";
 
 *,
 *::before,
@@ -69,7 +70,7 @@ $clr-1:#ffe600;
 
 .bton{
     cursor: pointer;
-    border: 2px solid var(--clr_1);
+    border: 2px solid #000;
     background-color: transparent;
     padding: 1rem 2rem;
     border-radius: 5px;
