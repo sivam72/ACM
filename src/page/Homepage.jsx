@@ -145,7 +145,7 @@ function Homepage(props) {
                 molestiae, labore accusantium quidem tempora neque impedit,
                 dignissimos ad tempore reiciendis nobis accusamus!
               </p>
-              <button className="bton">Contact Now</button>
+              <button className="bton" onClick={handlecontact}>Contact Now</button>
             </div>
             <div className="image">
               <img src="https://img.freepik.com/free-photo/handsome-unshaven-european-man-has-serious-self-confident-expression-wears-glasses_273609-17344.jpg" />
