@@ -100,8 +100,8 @@ const Maincontent = styled.section`
   }
 `;
 
-function Homepage() {
-
+function Homepage(props) {
+  const { handlecontact } = props;
   const [navState, setnavState] = useState(true);
   const Sectionref = useRef();
 
@@ -120,7 +120,7 @@ function Homepage() {
   return (
     <>
       <Homepagemain>
-        <Navbar navState={navState} />
+        <Navbar navState={navState} handlecontact={handlecontact}/>
         <Hero className="background-element" ref={Sectionref}>
           <div className="homepage_content">
             <h1>
@@ -130,7 +130,7 @@ function Homepage() {
             <p className="quote">Compete | Aspire | Evolve</p>
             <div>
               <button className="bton">Join ACM</button>
-              <button className="bton">Contact</button>
+              <button className="bton" onClick={handlecontact}>Contact</button>
             </div>
           </div>
         </Hero>

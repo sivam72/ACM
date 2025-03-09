@@ -60,7 +60,7 @@ const Navcontainer = styled.div`
 `
 
 function Navbar(props) {
-    const { navState } = props;
+    const { navState, handlecontact } = props;
     return (
         <Navcontainer className={navState ? "nav" : "scrolled"} >
             <div className="logos">
@@ -75,7 +75,7 @@ function Navbar(props) {
                 <Link to={'Events'} >Events</Link>
                 <Link to={'Gallery'}>Gallery</Link>
                 <Link to={'Teams'}>Team</Link>
-                <Link>Contact</Link>
+                <Link onClick={handlecontact}>Contact</Link>
             </nav>
         </Navcontainer>
     )

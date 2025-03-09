@@ -65,9 +65,9 @@ h6 {
     --clr_1: #ff9100;
 }
 
-$clr-1:#ffe600;
+$clr-1: #ffe600;
 
-.bton{
+.bton {
     cursor: pointer;
     border: 2px solid #000;
     background-color: transparent;
@@ -76,24 +76,36 @@ $clr-1:#ffe600;
     font-weight: 500;
     transition: background-color 300ms;
 
-    &:hover{
+    &.subm {
+        background-color: var(--clr_1);
+        font-size: 1.2rem;
+    }
+
+    &:hover {
         background-color: var(--clr_1);
     }
 
-    &:active{
-        background-color: color.scale(#f0a80c,$lightness: 10%);
+    &:active {
+        background-color: color.scale(#f0a80c, $lightness: 10%);
     }
-    
+
 }
 
-
-.nav{
+.nav {
     background-color: transparent;
     color: #000;
-    transition: color 200ms,background-color 300ms ease-out;
+    transition: color 200ms, background-color 300ms ease-out;
 }
 
 .scrolled {
     background-color: #fff;
     color: #000;
+}
+
+.open_contact {
+    display: block;
+}
+
+.close_contact {
+    display: none;
 }
