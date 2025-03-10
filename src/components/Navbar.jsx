@@ -4,10 +4,6 @@ import acm_1 from "../assets/acm_logo_1.png"
 import acm_2 from "../assets/chapter_logo.png"
 import { Link } from 'react-router-dom'
 
-
-
-
-
 const Navcontainer = styled.div`
     position: fixed;
     top: 0;

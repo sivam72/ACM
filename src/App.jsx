@@ -1,12 +1,15 @@
 import { Route, Routes } from "react-router-dom"
+import styled from "styled-components"
+import { useRef, useState } from "react"
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
 
 
 import Homepage from "./page/Homepage"
 import Teams from "./page/Teams"
-import styled from "styled-components"
+import Gallery from "./page/Gallery"
+import Events from "./page/Events"
 import Navbar from "./components/Navbar";
-import { useRef, useState } from "react"
+
 
 const Appcontainer = styled.section`
   position: relative;
@@ -135,7 +138,8 @@ function App() {
       <Routes>
         <Route index element={<Homepage handlecontact={handlecontact} Sectionref={Sectionref} setnavState={ setnavState }/>} />
         <Route path="/" element={<Homepage handlecontact={handlecontact} Sectionref={Sectionref} setnavState={ setnavState }/>} />
-        <Route path="events" element={<Teams/>}/>
+        <Route path="events" element={<Events/>}/>
+        <Route path="gallery" element={<Gallery/>}/>
       </Routes>
       
 
