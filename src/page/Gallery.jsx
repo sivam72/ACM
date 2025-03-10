@@ -42,6 +42,7 @@ const Gallerycomponent = styled.section`
     h1 {
       font-family: var(--font-3);
       font-weight: 800;
+      text-align: center;
       letter-spacing: 5px;
     }
   }
@@ -59,6 +60,10 @@ const Galleryview = styled.section`
 
     @media (max-width: 1025px) {
       grid-template-columns: repeat(2,1fr);
+    }
+
+    @media (max-width: 426px) {
+      grid-template-columns: repeat(1,1fr);
     }
     
     .image_container {

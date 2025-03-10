@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import acm_1 from "../assets/acm_logo_1.png"
 import acm_2 from "../assets/chapter_logo.png"
@@ -38,6 +38,15 @@ const Navcontainer = styled.div`
                 height: 80px;
             }
         }
+
+        @media (max-width: 426px) {
+            img {
+                height: 40px;
+            }
+            img:nth-child(2){
+                height: 50px;
+            }
+        }
     }
 
     .nav_list{
@@ -69,6 +78,38 @@ const Navcontainer = styled.div`
             @media (max-width: 769px) {
                 font-size: 1rem;
             }
+
+            @media (max-width: 426px) {
+                display: none;
+            }
+        }
+    }
+
+    .menu_icon {
+        display: none;
+
+        @media (max-width: 426px) {
+            display: block;
+        }
+    }
+
+    .nav_menu {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50px;
+        display: none;
+        place-items: center;
+        
+
+        a{
+            font-size: 1rem;
+            color: #000;
+            text-decoration:none;
+            font-weight: 500;
+            padding: .5rem;
+            border:1px solid transparent;
+            transition:color 300ms ease,border 300ms ease-out;
         }
     }
 `
@@ -76,6 +117,18 @@ const Navcontainer = styled.div`
 function Navbar(props) {
     const { navState, handlecontact, navHeight } = props;
     
+    const [menuOpen,setmenuOpen]=useState(false);
+    const menuref = useRef();
+    
+    function handlemenu() {
+        if (menuOpen) {
+          menuref.current.style.display = 'none';
+          setmenuOpen(false);
+        } else {
+          menuref.current.style.display = 'grid';
+          setmenuOpen(true);
+        }
+      }
     
     return (
         <Navcontainer className={navState ? "nav" : "scrolled"} ref={navHeight} >
@@ -87,6 +140,18 @@ function Navbar(props) {
             </div>
 
             <nav className="nav_list">
+                <Link to={'/'}>Home</Link>
+                <Link to={'events'} >Events</Link>
+                <Link to={'Gallery'}>Gallery</Link>
+                <Link to={'teams'}>Team</Link>
+                <Link onClick={handlecontact}>Contact</Link>
+            </nav>
+
+            <div className='menu_icon' onClick={handlemenu}>
+                <i className="fa-solid fa-bars"></i>
+            </div>
+
+            <nav className={"nav_menu " + (navState ? "nav" : "scrolled")} ref={menuref}>
                 <Link to={'/'}>Home</Link>
                 <Link to={'events'} >Events</Link>
                 <Link to={'Gallery'}>Gallery</Link>

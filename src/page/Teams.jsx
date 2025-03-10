@@ -129,6 +129,7 @@ const Teamscontainer = styled.section`
       padding-top: 2rem;
       font-family: var(--font-3);
       font-weight: 800;
+      text-align: center;
       letter-spacing: 5px;
     }
   }
@@ -145,6 +146,10 @@ const Teamscontainer = styled.section`
     grid-template-columns: repeat(3,1fr);
     grid-gap: 20px;
     padding: 2rem;
+
+    @media (max-width: 426px) {
+        grid-template-columns: repeat(1,1fr);
+    }
     
     .teams_card {
       display: grid;

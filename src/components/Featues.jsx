@@ -29,6 +29,10 @@ const Featurescontainer = styled.div`
     grid-gap: 1rem;
     grid-template-columns: repeat(3,1fr);
 
+    @media (max-width: 426px) {
+        grid-template-columns: repeat(1,1fr);
+    }
+
     p {
       margin:0px;
     }

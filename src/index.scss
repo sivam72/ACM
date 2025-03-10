@@ -105,6 +105,10 @@ $clr-1: #ffe600;
         padding: 1rem 1rem;
     }
 
+    @media (max-width: 426px) {
+        font-size: 1rem;
+        padding: .5rem 1rem;
+    }
 }
 
 .individual_heading {

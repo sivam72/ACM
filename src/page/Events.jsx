@@ -42,6 +42,7 @@ const Eventcontainer = styled.section`
       padding-top: 2rem;
       font-family: var(--font-3);
       font-weight: 800;
+      text-align: center;
       letter-spacing: 5px;
       
     }
@@ -53,6 +54,10 @@ const Wrapper = styled.section`
   padding: 1rem;
   display: grid;
   place-items: center;
+
+  @media (max-width: 426px) {
+    top: -200px;
+  }
 
   .events_grid { 
     display: grid;
@@ -75,6 +80,11 @@ const Wrapper = styled.section`
       border-radius: 10px;
       background-color: #fff;
       box-shadow: 1px 1px 10px #afafafdf;
+
+      @media (max-width: 426px) {
+        grid-template-columns: repeat(1,1fr);
+        place-items: center;
+      }
 
       .event_poster {
         img {

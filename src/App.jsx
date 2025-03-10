@@ -33,6 +33,12 @@ const Contactform = styled.div`
     padding: 1rem;
   }
 
+  @media (max-width: 426px) {
+    position: absolute;
+    top: 500px;
+    grid-template-columns: repeat(1,1fr);
+  }
+
   h1 {
     font-family: Monda;
     font-weight: 700;
@@ -41,6 +47,11 @@ const Contactform = styled.div`
   .contact_details {
     border-right: 1px solid #999999;
     padding: 1rem;
+
+    @media (max-width: 426px) {
+    border-right: 1px solid transparent;
+        
+    }
     .text{
       p {
           margin-bottom: 5px;
@@ -167,7 +178,7 @@ function App() {
         <Route path="teams" element={<Teams navState={setnavState} navHeight={navHeight} />} />
       </Routes>
 
-      <Footer />
+      {/* <Footer /> */}
       <Contactform ref={contactref}>
         <div className="contact_details">
           <div className="text">

@@ -48,6 +48,13 @@ const Hero = styled.section`
           font-size: 2rem;
         }
       }
+
+      @media (max-width: 436px) {
+        font-size: 2.7rem;
+        span {
+          font-size: 1.5rem;
+        }
+      }
     }
 
     .quote {
@@ -59,6 +66,10 @@ const Hero = styled.section`
 
       @media (max-width: 769px) {
         font-size: 1.1rem;
+      }
+
+      @media (max-width: 426px) {
+        font-size: 1rem;
       }
     }
 
@@ -92,6 +103,10 @@ const Maincontent = styled.section`
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 10px;
     /* max-height: 500px; */
+
+    @media (max-width: 426px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
 
     .text-container {
       padding: 1em;
@@ -128,6 +143,16 @@ const Maincontent = styled.section`
           line-height: 1.7;
         }
       }
+
+      @media (max-width: 426px) {
+        .heading {
+          font-size: 2.5rem;
+        }
+        p{
+          font-size: 1rem;
+          line-height: 1.7;
+        }
+      }
     }
 
     .image {
@@ -155,6 +180,7 @@ function Homepage(props) {
     }, { rootMargin: "-200px 0px 0px 0px" })
     observer.observe(Sectionref.current)
   }, [])
+
   return (
     <>
       <Homepagemain>
