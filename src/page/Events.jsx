@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components';
 
 const Hero = styled.section`
@@ -46,20 +46,17 @@ const Hero = styled.section`
   }
 `;
 
-function Events() {
+function Events(props) {
+  const { navHeight } = props;
+  const [height, setHeight] = useState(0);
+
+  useEffect(() => {
+    setHeight(navHeight.current.offsetHeight)
+    // console.log(height);
+  }, [])
   return (
     <Hero className="background-element" >
-          <div className="homepage_content">
-            <h1>
-              Velammal Institute of Technology <br />
-              <span>ACM STUDENT CHAPTER</span>
-            </h1>
-            <p className="quote">Compete | Aspire | Evolve</p>
-            <div>
-              <button className="bton">Join ACM</button>
-              <button className="bton">Contact</button>
-            </div>
-          </div>
+      
     </Hero>
   )
 }

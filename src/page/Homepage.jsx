@@ -1,9 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import Featues from "../components/Featues";
-import Footer from "../components/Footer";
-
-import college from "../assets/carousal/college.jpeg";
 
 
 const Homepagemain = styled.main`
@@ -127,7 +124,7 @@ function Homepage(props) {
             </h1>
             <p className="quote">Compete | Aspire | Evolve</p>
             <div>
-              <button className="bton">Join ACM</button>
+              <button className="bton" href="https://www.acm.org/membership">Join ACM</button>
               <button className="bton" onClick={handlecontact}>Contact</button>
             </div>
           </div>
@@ -154,7 +151,6 @@ function Homepage(props) {
 
           <Featues/>
         </Maincontent>
-        <Footer />
       </Homepagemain>
     </>
   );

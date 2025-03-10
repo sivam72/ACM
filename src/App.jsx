@@ -9,6 +9,7 @@ import Teams from "./page/Teams"
 import Gallery from "./page/Gallery"
 import Events from "./page/Events"
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 
 const Appcontainer = styled.section`
@@ -142,12 +143,12 @@ function App() {
       <Routes>
         <Route index element={<Homepage handlecontact={handlecontact} Sectionref={Sectionref} setnavState={setnavState} />} />
         <Route path="/" element={<Homepage handlecontact={handlecontact} Sectionref={Sectionref} setnavState={setnavState} />} />
-        <Route path="events" element={<Events />} />
-        <Route path="gallery" element={<Gallery />} />
+        <Route path="events" element={<Events navHeight={navHeight} />} />
+        <Route path="gallery" element={<Gallery navHeight={navHeight}/>} />
         <Route path="teams" element={<Teams navState={setnavState} navHeight={navHeight} />} />
       </Routes>
 
-
+      <Footer />
       <Contactform ref={contactref}>
         <div className="contact_details">
           <div className="text">

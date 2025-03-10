@@ -8,9 +8,9 @@ import velammal_footer_logo from "../assets/footer_logo.png"
 
 const Wrapper = styled.footer`
     position: relative; 
-    bottom: 0;
-    left: 0;
-    right: 0;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
     background-color: #6b6b6b;
     color: #fff;
     
