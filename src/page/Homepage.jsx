@@ -1,8 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
-import Navbar from "../components/Navbar";
 import styled from "styled-components";
 import Featues from "../components/Featues";
 import Footer from "../components/Footer";
+
+import college from "../assets/carousal/college.jpeg";
 
 
 const Homepagemain = styled.main`
@@ -101,9 +102,8 @@ const Maincontent = styled.section`
 `;
 
 function Homepage(props) {
-  const { handlecontact } = props;
-  const [navState, setnavState] = useState(true);
-  const Sectionref = useRef();
+  const { setnavState, Sectionref,  handlecontact } = props;
+  
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -120,7 +120,6 @@ function Homepage(props) {
   return (
     <>
       <Homepagemain>
-        <Navbar navState={navState} handlecontact={handlecontact}/>
         <Hero className="background-element" ref={Sectionref}>
           <div className="homepage_content">
             <h1>
@@ -148,11 +147,13 @@ function Homepage(props) {
               <button className="bton" onClick={handlecontact}>Contact Now</button>
             </div>
             <div className="image">
-              <img src="https://img.freepik.com/free-photo/handsome-unshaven-european-man-has-serious-self-confident-expression-wears-glasses_273609-17344.jpg" />
+              {/* <img src="https://img.freepik.com/free-photo/handsome-unshaven-european-man-has-serious-self-confident-expression-wears-glasses_273609-17344.jpg" /> */}
+              {/* <img src={college}/> */}
+              <img src="https://velammalgroup.com/wp-content/uploads/2023/06/Velammal-Institute-of-Technology01.jpg" />
             </div>
           </section>
 
-          <Featues />
+          <Featues/>
         </Maincontent>
         <Footer />
       </Homepagemain>

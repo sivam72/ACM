@@ -77,8 +77,13 @@ $clr-1: #ffe600;
     transition: background-color 300ms;
 
     &.subm {
-        background-color: var(--clr_1);
+        border:2px solid var(--clr_1);
         font-size: 1.2rem;
+
+        &:hover {
+            border: 2px solid #000;
+            background-color: var(--clr_1);
+        }
     }
 
     &:hover {
@@ -100,12 +105,4 @@ $clr-1: #ffe600;
 .scrolled {
     background-color: #fff;
     color: #000;
-}
-
-.open_contact {
-    display: block;
-}
-
-.close_contact {
-    display: none;
 }

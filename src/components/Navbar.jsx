@@ -13,6 +13,7 @@ const Navcontainer = styled.div`
     top: 0;
     left: 0;
     right: 0;
+    z-index:20;
     display:flex;
     align-items:center;
     justify-content: space-between;
@@ -60,7 +61,7 @@ const Navcontainer = styled.div`
 `
 
 function Navbar(props) {
-    const { navState, handlecontact } = props;
+    const { navState,handlecontact } = props;
     return (
         <Navcontainer className={navState ? "nav" : "scrolled"} >
             <div className="logos">
@@ -71,8 +72,8 @@ function Navbar(props) {
             </div>
 
             <nav className="nav_list">
-                <Link to={'Homepage'}>Home</Link>
-                <Link to={'Events'} >Events</Link>
+                <Link to={'/'}>Home</Link>
+                <Link to={'events'} >Events</Link>
                 <Link to={'Gallery'}>Gallery</Link>
                 <Link to={'Teams'}>Team</Link>
                 <Link onClick={handlecontact}>Contact</Link>

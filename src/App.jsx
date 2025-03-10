@@ -5,6 +5,7 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
 import Homepage from "./page/Homepage"
 import Teams from "./page/Teams"
 import styled from "styled-components"
+import Navbar from "./components/Navbar";
 import { useRef, useState } from "react"
 
 const Appcontainer = styled.section`
@@ -18,7 +19,7 @@ const Contactform = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #fff;
-  display: grid;
+  display: none;
   grid-template-columns: repeat(2,1fr);
   padding: 1.5rem;
   border-radius: 10px;
@@ -98,12 +99,23 @@ const Contactform = styled.div`
       height: 30px;
     }
   }
-  
 
+  /* &::before {
+    content:'';
+    position: absolute;
+    background-color: #646464;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+  } */
 `
 
 function App() {
   const [contactOpen, setcontactOpen] = useState(false);
+  const [navState, setnavState] = useState(true);
+  const Sectionref = useRef();
   const contactref = useRef()
 
   function handlecontact() {
@@ -118,12 +130,14 @@ function App() {
 
   return (
     <Appcontainer>
+      <Navbar navState={navState} handlecontact={handlecontact}/>
 
-      {/* <Routes>
-        <Route index element={<Homepage />} />
-        
-      </Routes> */}
-      <Homepage handlecontact={handlecontact} />
+      <Routes>
+        <Route index element={<Homepage handlecontact={handlecontact} Sectionref={Sectionref} setnavState={ setnavState }/>} />
+        <Route path="/" element={<Homepage handlecontact={handlecontact} Sectionref={Sectionref} setnavState={ setnavState }/>} />
+        <Route path="events" element={<Teams/>}/>
+      </Routes>
+      
 
       <Contactform ref={contactref}>
         <div className="contact_details">
