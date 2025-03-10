@@ -5,22 +5,22 @@ const features_list = [
     {
         num: '01',
         title: "Contests",
-        content: "Lorem ipsum dolor sit amet consectetur omnis? Autem repudiandae sint iusto labore!"
+        content: "Tech contests are competitions that test participants on their tech skills and knowledge. They can be open to all the students. "
     },
     {
         num: '02',
         title: "Hackathons",
-        content: "Lorem ipsum dolor sit amet consectetur omnis? Autem repudiandae sint iusto labore!"
+        content: "A hackathon is an event where people collaborate to build projects or solve problems using technology. Hackathons can be in-person, virtual, or a combination of both."
     },
     {
         num: '03',
         title: "Talks",
-        content: "Lorem ipsum dolor sit amet consectetur omnis? Autem repudiandae sint iusto labore!"
+        content: "Tech talks are events or forums where people can learn about technology, share knowledge, and discuss the latest trends."
     },
     {
         num: '04',
         title: "Workshops",
-        content: "Lorem ipsum dolor sit amet consectetur omnis? Autem repudiandae sint iusto labore!"
+        content: "Tech workshops are interactive sessions where people work together to solve problems or explore opportunities. They can help with innovation, creativity, and aligning expectations. "
     }
 ]
 

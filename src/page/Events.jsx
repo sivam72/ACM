@@ -21,7 +21,7 @@ const events_data = [
   {
     id: 3,
     image: "/Events/event_3.jpg",
-    event_name: "Lab Welcomming Session",
+    event_name: "Lab Welcoming Session",
     date: "24th Feb 2025",
     year: "2025",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit accusantium impedit quisquam numquam ut vel tempora exercitationem. Voluptatibus consequuntur, voluptatem quo rerum dolorem libero necessitatibus nobis voluptates perferendis eum repellat."

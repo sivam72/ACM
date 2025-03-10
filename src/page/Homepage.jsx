@@ -187,7 +187,7 @@ function Homepage(props) {
         <Hero className="background-element" ref={Sectionref}>
           <div className="homepage_content">
             <h1>
-              Velammal Institute of Technology <br />
+              Velammal ITech <br />
               <span>ACM STUDENT CHAPTER</span>
             </h1>
             <p className="quote">Compete | Aspire | Evolve</p>
@@ -203,10 +203,8 @@ function Homepage(props) {
             <div className="text-container">
               <h2 className="heading">About us</h2>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Aperiam, nam. Ullam fugit quasi fugiat suscipit adipisci amet
-                molestiae, labore accusantium quidem tempora neque impedit,
-                dignissimos ad tempore reiciendis nobis accusamus!
+                Velammal Institute of Technology is committed to be a leader in innovative work force development and a world class learning venue for the ever changing needs of Business and Industry.
+                In line with our mission, we accelerate technology transfer to industry and develop innovations in applications of emerging technologies through high quality technical education and work force training
               </p>
               <button className="bton" onClick={handlecontact}>Contact Now</button>
             </div>
