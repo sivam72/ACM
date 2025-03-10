@@ -1,6 +1,6 @@
-import { Route, Routes } from "react-router-dom"
+import { Route, Routes } from "react-router"
 import styled from "styled-components"
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
 
 
@@ -119,7 +119,9 @@ function App() {
   const [contactOpen, setcontactOpen] = useState(false);
   const [navState, setnavState] = useState(true);
   const Sectionref = useRef();
-  const contactref = useRef()
+  const contactref = useRef();
+  const navHeight = useRef();
+
 
   function handlecontact() {
     if (contactOpen) {
@@ -131,17 +133,20 @@ function App() {
     }
   }
 
+
+
   return (
     <Appcontainer>
-      <Navbar navState={navState} handlecontact={handlecontact}/>
+      <Navbar navState={navState} handlecontact={handlecontact} navHeight={navHeight} />
 
       <Routes>
-        <Route index element={<Homepage handlecontact={handlecontact} Sectionref={Sectionref} setnavState={ setnavState }/>} />
-        <Route path="/" element={<Homepage handlecontact={handlecontact} Sectionref={Sectionref} setnavState={ setnavState }/>} />
-        <Route path="events" element={<Events/>}/>
-        <Route path="gallery" element={<Gallery/>}/>
+        <Route index element={<Homepage handlecontact={handlecontact} Sectionref={Sectionref} setnavState={setnavState} />} />
+        <Route path="/" element={<Homepage handlecontact={handlecontact} Sectionref={Sectionref} setnavState={setnavState} />} />
+        <Route path="events" element={<Events />} />
+        <Route path="gallery" element={<Gallery />} />
+        <Route path="teams" element={<Teams navState={setnavState} navHeight={navHeight} />} />
       </Routes>
-      
+
 
       <Contactform ref={contactref}>
         <div className="contact_details">

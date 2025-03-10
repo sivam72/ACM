@@ -72,7 +72,7 @@ const Maincontent = styled.section`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 10px;
-    height: 500px;
+    /* max-height: 500px; */
 
     .text-container {
       padding: 1em;
@@ -104,7 +104,6 @@ const Maincontent = styled.section`
 function Homepage(props) {
   const { setnavState, Sectionref,  handlecontact } = props;
   
-
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {

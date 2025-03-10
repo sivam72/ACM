@@ -1,15 +1,15 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import styled from 'styled-components'
 import acm_1 from "../assets/acm_logo_1.png"
 import acm_2 from "../assets/chapter_logo.png"
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router'
 
 const Navcontainer = styled.div`
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index:20;
+    z-index:9;
     display:flex;
     align-items:center;
     justify-content: space-between;
@@ -57,21 +57,23 @@ const Navcontainer = styled.div`
 `
 
 function Navbar(props) {
-    const { navState,handlecontact } = props;
+    const { navState, handlecontact, navHeight } = props;
+    
+    
     return (
-        <Navcontainer className={navState ? "nav" : "scrolled"} >
+        <Navcontainer className={navState ? "nav" : "scrolled"} ref={navHeight} >
             <div className="logos">
                 <a href="https://www.acm.org/" target='_blank'>
-                    <img src={acm_2} />
+                    <img src={acm_2} className='logo' />
                 </a>
-                <img src={acm_1} />
+                <img src={acm_1} className='logo'/>
             </div>
 
             <nav className="nav_list">
                 <Link to={'/'}>Home</Link>
                 <Link to={'events'} >Events</Link>
                 <Link to={'Gallery'}>Gallery</Link>
-                <Link to={'Teams'}>Team</Link>
+                <Link to={'teams'}>Team</Link>
                 <Link onClick={handlecontact}>Contact</Link>
             </nav>
         </Navcontainer>

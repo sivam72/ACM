@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router'
 
 import acm_1 from "../assets/acm_logo_1.png"
 import acm_2 from "../assets/chapter_logo.png"
@@ -11,7 +11,7 @@ const Wrapper = styled.footer`
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: #000000;
+    background-color: #6b6b6b;
     color: #fff;
     
 `
