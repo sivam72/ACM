@@ -44,11 +44,11 @@ const Featurescontainer = styled.div`
             .feastures_title {
                 color: var(--clr_1); 
                 font-weight: 700;
-                font-size: 3rem;
+                font-size: 4rem;
             }
 
             h4{
-                font-size: 1.5rem;
+                font-size: 2rem;
                 font-weight: 700;
                 margin:0;
             }
@@ -56,6 +56,41 @@ const Featurescontainer = styled.div`
 
         .features_content{
             margin-top: 1rem;
+            p {
+                font-size: 1.7rem;
+            }
+        }
+
+        @media (max-width: 1025px) {
+            .features_text {
+                .feastures_title {
+                    font-size: 3rem;
+                }
+                h4 {
+                    font-size: 1.5rem;
+                }
+            }
+            .features_content{
+                p {
+                    font-size: 1.2rem;
+                }
+            }
+        }
+
+        @media (max-width: 769px) {
+            .features_text {
+                .feastures_title {
+                    font-size: 2.6rem;
+                }
+                h4 {
+                    font-size: 1.3rem;
+                }
+            }
+            .features_content{
+                p {
+                    font-size: 1rem;
+                }
+            }
         }
     }
     

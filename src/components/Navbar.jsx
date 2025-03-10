@@ -29,6 +29,15 @@ const Navcontainer = styled.div`
         img:nth-child(2){
             height:100px;
         }
+
+        @media (max-width: 769px) {
+            img {
+                height: 60px;
+            }
+            img:nth-child(2){
+                height: 80px;
+            }
+        }
     }
 
     .nav_list{
@@ -36,7 +45,7 @@ const Navcontainer = styled.div`
         gap:10px;
 
         a{
-            font-size: 1.1rem;
+            font-size: 1.7rem;
             color: #000;
             text-decoration:none;
             font-weight: 500;
@@ -51,6 +60,14 @@ const Navcontainer = styled.div`
 
             &:active{
                 color: #ff9900;
+            }
+
+            @media (max-width: 1025px) {
+                font-size: 1.2rem;
+            }
+
+            @media (max-width: 769px) {
+                font-size: 1rem;
             }
         }
     }

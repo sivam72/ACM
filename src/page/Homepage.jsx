@@ -23,16 +23,30 @@ const Hero = styled.section`
       text-align: center;
       margin: 0px;
       font-family: "Agdasima";
-      font-size: 3.5rem;
+      font-size: 5.2rem;
       font-weight: 700;
       letter-spacing: 1px;
       color: #363636;
 
       span {
         font-family: var(--font-3);
-        font-size: 3rem;
+        font-size: 4rem;
         font-weight: normal;
         text-shadow: 1px 1px;
+      }
+
+      @media (max-width: 1025px) {
+        font-size: 4rem;
+        span {
+          font-size: 3rem;
+        }
+      }
+
+      @media (max-width: 769px) {
+        font-size: 3rem;
+        span {
+          font-size: 2rem;
+        }
       }
     }
 
@@ -40,8 +54,12 @@ const Hero = styled.section`
       text-align: center;
       padding: 1.5rem;
       font-family: "Roboto";
-      font-size: 1.3rem;
+      font-size: 1.5rem;
       font-weight: 500;
+
+      @media (max-width: 769px) {
+        font-size: 1.1rem;
+      }
     }
 
     div {
@@ -65,6 +83,10 @@ const Maincontent = styled.section`
   padding: 5rem;
   background-color: #fff;
 
+  @media (max-width : 769px) {
+    padding: 3rem;
+  }
+
   .about_grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -79,12 +101,32 @@ const Maincontent = styled.section`
 
       .heading {
         font-family: "Monda";
-        font-size: 3.5rem;
+        font-size: 4.5rem;
+        font-weight: 800;
       }
 
       p {
-        font-size: 1.1rem;
+        font-size: 1.7rem;
         line-height: 2;
+      }
+
+      @media (max-width: 1025px) {
+        .heading {
+          font-size: 3.5rem;
+        }
+        p{
+          font-size: 1.2rem;
+        }
+      }
+
+      @media (max-width: 769px) {
+        .heading {
+          font-size: 2.5rem;
+        }
+        p{
+          font-size: 1rem;
+          line-height: 1.7;
+        }
       }
     }
 
@@ -99,8 +141,8 @@ const Maincontent = styled.section`
 `;
 
 function Homepage(props) {
-  const { setnavState, Sectionref,  handlecontact } = props;
-  
+  const { setnavState, Sectionref, handlecontact } = props;
+
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -149,7 +191,7 @@ function Homepage(props) {
             </div>
           </section>
 
-          <Featues/>
+          <Featues />
         </Maincontent>
       </Homepagemain>
     </>

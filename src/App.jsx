@@ -29,6 +29,10 @@ const Contactform = styled.div`
   border-radius: 10px;
   box-shadow: 1px 2px 10px #999999;
 
+  @media (max-width: 769px) {
+    padding: 1rem;
+  }
+
   h1 {
     font-family: Monda;
     font-weight: 700;
@@ -56,6 +60,11 @@ const Contactform = styled.div`
         p {
           font-size: 1.2rem;
           width:400px;
+
+          @media (max-width: 769px) {
+            font-size: 1rem;
+            width: 300px;
+          }
         }
       }
     }
@@ -67,12 +76,24 @@ const Contactform = styled.div`
         height:300px;
       }
     }
+
+    @media (max-width: 769px) {
+      .map {
+        iframe{
+          width:300px;
+          height:200px;
+        }
+      }
+    }
   }
 
   .contact_container {
     padding: 1rem;
     min-width: 400px;
 
+    @media (max-width: 769px) {
+      min-width: 300px;
+    }
     .input_cont {
       margin-top: 1rem;
       display: grid;
@@ -134,8 +155,6 @@ function App() {
     }
   }
 
-
-
   return (
     <Appcontainer>
       <Navbar navState={navState} handlecontact={handlecontact} navHeight={navHeight} />
@@ -144,7 +163,7 @@ function App() {
         <Route index element={<Homepage handlecontact={handlecontact} Sectionref={Sectionref} setnavState={setnavState} />} />
         <Route path="/" element={<Homepage handlecontact={handlecontact} Sectionref={Sectionref} setnavState={setnavState} />} />
         <Route path="events" element={<Events navHeight={navHeight} />} />
-        <Route path="gallery" element={<Gallery navHeight={navHeight}/>} />
+        <Route path="gallery" element={<Gallery navHeight={navHeight} />} />
         <Route path="teams" element={<Teams navState={setnavState} navHeight={navHeight} />} />
       </Routes>
 
@@ -158,7 +177,7 @@ function App() {
                 <path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" />
                 <path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" />
               </svg>
-              <p>pugazhendhisiva02@gmail.com</p>
+              <p>b.senthil2002@gmail.com</p>
             </div>
             <div className="text_line">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="contact_icons">

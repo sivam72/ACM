@@ -20,7 +20,7 @@ const data = [
     role: "Chair Person",
     links: {
       git: "https://github.com/Thariiq07",
-      linkedin: ""
+      linkedin: "https://www.linkedin.com/in/thariq-hameed-784258252"
     }
   },
   {
@@ -29,7 +29,7 @@ const data = [
     role: "Vice Chair",
     links: {
       git: "",
-      linkedin: ""
+      linkedin: "https://www.linkedin.com/in/asvithasivabalan2105/"
     }
   },
   {
@@ -47,7 +47,7 @@ const data = [
     role: "Treasurer",
     links: {
       git: "",
-      linkedin: ""
+      linkedin: "https://www.linkedin.com/in/monikasundar0412/"
     }
   },
   {
@@ -65,40 +65,40 @@ const data = [
     role: "Technical Head",
     links: {
       git: "",
-      linkedin: ""
+      linkedin: "https://www.linkedin.com/in/sivam-m-269b72279/"
     }
   },
   {
     photo: photo_7,
     name: "Mr Paramasivam",
-    role: "member",
+    role: "Member",
     links: {
       git: "",
-      linkedin: ""
+      linkedin: "https://www.linkedin.com/in/paramasivam-v-4b2069329/"
     }
   },
   {
     photo: photo_8,
     name: "Mr Bala Vignesh",
-    role: "member",
+    role: "Member",
     links: {
       git: "",
-      linkedin: ""
+      linkedin: "https://www.linkedin.com/in/balavignesh-b-bb0672337/"
     }
   },
   {
     photo: photo_9,
-    name: "Ms Geetha Varshini",
-    role: "member",
+    name: "Ms GeethaVarshini",
+    role: "Member",
     links: {
       git: "",
-      linkedin: ""
+      linkedin: "https://www.linkedin.com/in/geedhavarshini-vijayabhaskar-799926337/"
     }
   },
   {
     photo: photo_10,
     name: "Mr Gokul Raj",
-    role: "member",
+    role: "Member",
     links: {
       git: "",
       linkedin: ""
@@ -107,7 +107,7 @@ const data = [
   {
     photo: photo_6,
     name: "Mr Amshavarthan",
-    role: "member",
+    role: "Member",
     links: {
       git: "",
       linkedin: ""
@@ -117,6 +117,7 @@ const data = [
 
 const Teamscontainer = styled.section`
   margin-top:${props => props.height + "px"};
+  min-height: 100dvh;
 
   .hero {
     display: flex;
@@ -129,7 +130,6 @@ const Teamscontainer = styled.section`
       font-family: var(--font-3);
       font-weight: 800;
       letter-spacing: 5px;
-      font-size: 5rem;
     }
   }
    .wrapper {
@@ -142,12 +142,10 @@ const Teamscontainer = styled.section`
 
   .teams_grid {
     display: grid;
-    grid-template-columns: repeat(3,300px);
-    max-width : 1440px;
+    grid-template-columns: repeat(3,1fr);
     grid-gap: 20px;
     padding: 2rem;
     
-
     .teams_card {
       display: grid;
       grid-template-columns: 1fr;
@@ -179,6 +177,9 @@ const Teamscontainer = styled.section`
         h2 {
           font-weight: 700;
         }
+        p{
+          font-size: 1.2rem;
+        }
         .teams_links {
           display: flex;
           justify-content: center;
@@ -208,7 +209,7 @@ function Teams(props) {
   return (
     <Teamscontainer height={height.toString()} >
       <div className='hero background-element'>
-        <h1>Meet Our Team</h1>
+        <h1 className='individual_heading'>Meet Our Team</h1>
       </div>
 
       <section className='wrapper'>
@@ -216,10 +217,13 @@ function Teams(props) {
           {data.map((data, index) => {
             return (
               <div className='teams_card' key={index}>
+
                 <div className='teams_img'>
                   <img src={data.photo} />
                 </div>
+
                 <div className="teams_text">
+
                   <h2>{data.name}</h2>
                   <p>{data.role}</p>
 
@@ -227,11 +231,11 @@ function Teams(props) {
                     <a href={data.links.linkedin} target='_blank'>
                       <i className="fa-brands fa-linkedin icon"></i>
                     </a>
-
                     <a href={data.links.git} target='_blank'>
                       <i className="fa-brands fa-github icon"></i>
                     </a>
                   </div>
+
                 </div>
               </div>
             )
