@@ -1,32 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-
-const gallery_data = [
-  {
-    id: 1,
-    event: "Lab welcomming",
-    year: "2025",
-    image: "/Gallery/lab_welcomming_1.jpg"
-  },
-  {
-    id: 2,
-    event: "Lab welcomming",
-    year: "2025",
-    image: "/Gallery/lab_welcomming_2.jpg"
-  },
-  {
-    id: 3,
-    event: "Lab welcomming",
-    year: "2025",
-    image: "/Gallery/lab_welcomming_3.jpg"
-  },
-  {
-    id: 4,
-    event: "Lab welcomming",
-    year: "2025",
-    image: "/Gallery/lab_welcomming_4.jpg"
-  }
-]
+import { gallery_data } from '../data'
 
 const Gallerycomponent = styled.section`
   margin-top:${props => props.height + "px"};
@@ -91,7 +65,7 @@ function Gallery(props) {
       </div>
       <Galleryview>
         <div className="gallery_grid" >
-          {gallery_data.map(data => {
+          {[...gallery_data].reverse().map(data => {
             return (
               <article className='image_container' key={data.id}>
                 <img src={data.image} />
