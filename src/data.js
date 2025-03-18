@@ -115,7 +115,7 @@ export const gallery_data = [
         event: "ACM Inauguration",
         year: "2025",
         image: "/Gallery/winners_1.jpg",
-    },
+    }
 ];
 
 import photo_1 from "./assets/teams/thariq.jpg";

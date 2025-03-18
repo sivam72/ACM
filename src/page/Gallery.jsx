@@ -31,7 +31,7 @@ const Gallerycomponent = styled.section`
       width: 200px;
       border: 1px solid var(--clr_1);
       border-radius: 5px;
-      margin:0px 10px ;
+      margin:0px 5px ;
       font-family: var(--font-2);
       font-size: 3rem;
       font-weight: 700;
@@ -99,29 +99,39 @@ const Galleryview = styled.section`
 function Gallery(props) {
   const { navHeight } = props;
   const [height, setHeight] = useState(0);
-  
+
   useEffect(() => {
     setHeight(navHeight.current.offsetHeight)
   }, [])
-  
-  const [start,setStart] = useState(gallery_data[gallery_data.length-1].id);
-  const [end,setEnd] = useState((gallery_data[gallery_data.length-1].id)-5);
 
-  const handlePrev = ()=>{
-    setEnd(start)
-    if(start + 5 <= gallery_data.length){
-      setStart(prev => prev + 5);
-    }else{
-      setStart(gallery_data.length);
+  const [start, setStart] = useState(gallery_data[gallery_data.length - 1].id);
+  const [end, setEnd] = useState((gallery_data[gallery_data.length - 1].id) - 5);
+
+  const handlePrev = () => {
+    if (start == gallery_data[gallery_data.length - 1].id && end == (gallery_data[gallery_data.length - 1].id) - 5) {
+      setStart(gallery_data[gallery_data.length - 1].id);
+      setEnd((gallery_data[gallery_data.length - 1].id) - 5);
+    } else {
+      setEnd(start)
+      if (start + 5 <= gallery_data.length) {
+        setStart(prev => prev + 5);
+      } else {
+        setStart(gallery_data.length);
+      }
     }
   }
 
-  const handleNext = ()=>{
-    setStart(end)
-    if(start - 5 < 0){
-      setEnd(1);
-    }else{
-      setEnd(prev => prev - 5);
+  const handleNext = () => {
+    if (start == 5 && end == 0) {
+      setStart(5);
+      setEnd(0);
+    } else {
+      setStart(end)
+      if (start - 5 < 0) {
+        setEnd(1);
+      } else {
+        setEnd(prev => prev - 5);
+      }
     }
   }
 
@@ -133,10 +143,10 @@ function Gallery(props) {
       <Galleryview>
         <div className="gallery_grid" >
           {[...gallery_data].reverse().filter(data => data.id <= start && data.id >= end).map(data => {
-              return(
+            return (
               <article className='image_container' key={data.id}>
                 <img src={data.image} />
-              </article>) 
+              </article>)
           })}
         </div>
       </Galleryview>

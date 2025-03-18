@@ -192,7 +192,7 @@ function Homepage(props) {
             </h1>
             <p className="quote">Compete | Aspire | Evolve</p>
             <div>
-              <button className="bton" href="https://www.acm.org/membership">Join ACM</button>
+              <a className="bton" style={{ textDecoration: "none", color: "#000" }} href="https://www.acm.org/membership/join" target="_blank">Join ACM</a>
               <button className="bton" onClick={handlecontact}>Contact</button>
             </div>
           </div>
