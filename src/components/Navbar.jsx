@@ -57,10 +57,9 @@ const Navcontainer = styled.div`
             font-size: 1.7rem;
             color: #000;
             text-decoration:none;
-            font-weight: 500;
             padding: .5rem;
             border:1px solid transparent;
-            transition:color 300ms ease,border 300ms ease-out;
+            transition: color 300ms ease,border 300ms ease-out;
 
             &:hover{
                 color: var(--clr_1); 
@@ -101,12 +100,10 @@ const Navcontainer = styled.div`
         display: none;
         place-items: center;
         
-
         a{
             font-size: 1rem;
             color: #000;
             text-decoration:none;
-            font-weight: 500;
             padding: .5rem;
             border:1px solid transparent;
             transition:color 300ms ease,border 300ms ease-out;

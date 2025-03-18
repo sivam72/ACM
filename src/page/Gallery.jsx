@@ -20,6 +20,42 @@ const Gallerycomponent = styled.section`
       letter-spacing: 5px;
     }
   }
+
+  .gallery_nav {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+
+    .nav_arrow {
+      background-color: #fff;
+      width: 200px;
+      border: 1px solid var(--clr_1);
+      border-radius: 5px;
+      margin:0px 10px ;
+      font-family: var(--font-2);
+      font-size: 3rem;
+      font-weight: 700;
+      transition: background-color 300ms;
+
+      &:hover {
+        background-color: var(--clr_1);
+      }
+
+      &:active {
+        background-color: color.scale(#f0a80c, $lightness: 10%);
+      }
+
+      @media (max-width: 1025px){
+        width: 150px;
+        font-size: 2.5rem;
+      }
+
+      @media (max-width: 769px){
+        width: 100px;
+        font-size: 2rem;
+      }
+    }
+  }
 `
 const Galleryview = styled.section`
   display: grid;
@@ -42,9 +78,19 @@ const Galleryview = styled.section`
     
     .image_container {
       img{
+        position: relative;
         object-fit: cover;
         height: 500px;
         width: 100%;
+
+        transition: scale 300ms ease,
+                    border-radius 200ms ease-in;
+
+        &:hover {
+          cursor: pointer;
+          z-index: 5;
+          scale: 102%;
+        }
       }
     }
   }
@@ -53,10 +99,31 @@ const Galleryview = styled.section`
 function Gallery(props) {
   const { navHeight } = props;
   const [height, setHeight] = useState(0);
-
+  
   useEffect(() => {
     setHeight(navHeight.current.offsetHeight)
   }, [])
+  
+  const [start,setStart] = useState(gallery_data[gallery_data.length-1].id);
+  const [end,setEnd] = useState((gallery_data[gallery_data.length-1].id)-5);
+
+  const handlePrev = ()=>{
+    setEnd(start)
+    if(start + 5 <= gallery_data.length){
+      setStart(prev => prev + 5);
+    }else{
+      setStart(gallery_data.length);
+    }
+  }
+
+  const handleNext = ()=>{
+    setStart(end)
+    if(start - 5 < 0){
+      setEnd(1);
+    }else{
+      setEnd(prev => prev - 5);
+    }
+  }
 
   return (
     <Gallerycomponent height={height.toString()}>
@@ -65,15 +132,18 @@ function Gallery(props) {
       </div>
       <Galleryview>
         <div className="gallery_grid" >
-          {[...gallery_data].reverse().map(data => {
-            return (
+          {[...gallery_data].reverse().filter(data => data.id <= start && data.id >= end).map(data => {
+              return(
               <article className='image_container' key={data.id}>
                 <img src={data.image} />
-              </article>
-            )
+              </article>) 
           })}
         </div>
       </Galleryview>
+      <div className='gallery_nav'>
+        <button className='nav_arrow' onClick={handlePrev}>{'<'}</button>
+        <button className='nav_arrow' onClick={handleNext}>{'>'}</button>
+      </div>
     </Gallerycomponent>
   )
 }

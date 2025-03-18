@@ -79,7 +79,7 @@ $clr-1: #ffe600;
     transition: background-color 300ms;
 
     &.subm {
-        border:2px solid var(--clr_1);
+        border: 2px solid var(--clr_1);
         font-size: 1.2rem;
 
         &:hover {
@@ -121,12 +121,10 @@ $clr-1: #ffe600;
 
 .nav {
     background-color: transparent;
-    color: #000;
-    transition:  height 500ms ease-in,color 200ms, background-color 300ms ease-out;
+    transition: height 500ms ease-in, color 200ms, background-color 300ms ease-out;
 }
 
 .scrolled {
-    background-color: #ffffff;;
-    color: #000;
+    background-color: #ffffff;
     box-shadow: 1px 1px 10px #e0e0e0;
 }
