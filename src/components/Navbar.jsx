@@ -22,9 +22,14 @@ const Navcontainer = styled.div`
         gap:10px;
         padding:0px;
 
+        .logo {
+            flex: none;
+        }
+
         img{
             cursor:pointer;
             height:80px;
+            
         }
         img:nth-child(2){
             height:100px;
@@ -89,6 +94,8 @@ const Navcontainer = styled.div`
 
         @media (max-width: 426px) {
             display: block;
+            aspect-ratio: 1;
+            font-size: 1.3rem;
         }
     }
 
@@ -98,14 +105,17 @@ const Navcontainer = styled.div`
         right: 0;
         top: 50px;
         display: none;
-        place-items: center;
+        grid-template-columns: repeat(5,1fr);
+        
         
         a{
-            font-size: 1rem;
+            font-size: .7rem;
             color: #000;
             text-decoration:none;
+            text-align: center;
             padding: .5rem;
-            border:1px solid transparent;
+            width: 100%;
+            border-bottom:1px solid transparent;
             transition:color 300ms ease,border 300ms ease-out;
         }
     }

@@ -28,7 +28,7 @@ const Gallerycomponent = styled.section`
 
     .nav_arrow {
       background-color: #fff;
-      width: 200px;
+      width: 100px;
       border: 1px solid var(--clr_1);
       border-radius: 5px;
       margin:0px 5px ;
