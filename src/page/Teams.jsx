@@ -56,6 +56,11 @@ const Teamscontainer = styled.section`
 
       .teams_img {
         img {
+          -webkit-user-drag: none;
+          user-select: none;
+          -moz-user-select: none;
+          -webkit-user-select: none;
+          -ms-user-select: none;
           height: 120px;
           aspect-ratio:1;
           object-fit: cover;
@@ -111,7 +116,7 @@ function Teams(props) {
               <div className='teams_card' key={index}>
 
                 <div className='teams_img'>
-                  <img src={data.photo} />
+                  <img src={data.photo} draggable="false" onContextMenu={(e) => {e.preventDefault()}}/>
                 </div>
 
                 <div className="teams_text">

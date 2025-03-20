@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { events_data } from "../data";
 
@@ -59,8 +59,11 @@ const Wrapper = styled.section`
       }
 
       .event_poster {
+        position: relative;
+
         img {
-          height: 300px;
+          height: 350px;
+          width: 100%;
           border: 1px solid #cfcfcfdf;
           border-radius: 5px;
         }
@@ -74,26 +77,41 @@ const Wrapper = styled.section`
           font-size: 2.3rem;
           font-weight: 700;
         }
+
         .time_text { 
           margin-top: 1rem;
+
           .date {
             margin: 0;
             font-size: 1.1rem;
             font-weight: 700;
           }
+
           .description {
             margin: 0;
           }
         }
 
         @media (max-width: 426px) {
-        
-        text-align: center;
-      }
+          text-align: center;
+        }
       }
     }
   }
 `;
+
+const Statuslabel = styled.span`
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: ${props =>(props.$status)?"#fff":"#000"};
+  font-family: var(--font-4);
+  font-size: 1rem;
+  font-weight: 600;
+  padding: .5rem 1rem;
+  background-color: ${props => (props.$status)? "var(--clr_1)":"#fff"};
+  border-radius: 10px;
+`
 
 function Events(props) {
   const { navHeight } = props;
@@ -101,10 +119,11 @@ function Events(props) {
 
   useEffect(() => {
     setHeight(navHeight.current.offsetHeight);
-    // console.log(height);
+    
   }, []);
+
   return (
-    <Eventcontainer height={height.toString()}>
+    <Eventcontainer height={height}>
       <div className="hero background-element">
         <h1 className="individual_heading">Events</h1>
       </div>
@@ -116,6 +135,7 @@ function Events(props) {
               <article className="event_card" key={data.id}>
                 <div className="event_poster">
                   <img src={data.image} />
+                  <Statuslabel $status={(data.status == "Finished")? true : false}>{data.status}</Statuslabel>
                 </div>
                 <div className="text_content">
                   <h2 className="event_name">{data.event_name}</h2>

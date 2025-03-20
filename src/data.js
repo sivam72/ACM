@@ -32,6 +32,7 @@ export const events_data = [
         event_name: "Lab Welcoming Session",
         date: "24th Feb 2025 & 25th Feb 2025",
         year: "2025",
+        status: "Finished",
         description:
             "As part of the ACM lab welcomming workshop session was conducted for our college 2nd years to teach about the industrial implications and awareness for DBMS and OS .",
     },
@@ -41,6 +42,7 @@ export const events_data = [
         event_name: "TechTime Trivia - ACM Inaugural",
         date: "11th Mar 2025",
         year: "2025",
+        status: "Finished",
         description:
             "As part of the ACM Inauguration function, A very in-depth Technical Quiz Competition as conducted.",
     },
@@ -50,6 +52,7 @@ export const events_data = [
         event_name: "Code Combat - ACM Inaugural",
         date: "11th Mar 2025",
         year: "2025",
+        status: "Finished",
         description:
             "As part of the ACM Inauguration function, A creative and intractive auction based coding contest was conducted.",
     },
